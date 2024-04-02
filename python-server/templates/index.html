@@ -1,0 +1,29 @@
+<!-- generate a standard index.html file -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Webpage</title>
+    <!-- create a text input and a button that calls an api -->
+    <script>
+        function callApi() {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "http://localhost:5001/whichapi", true);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    document.getElementById("response").innerHTML = xhr.responseText;
+                }
+            }
+            xhr.send();
+        }
+
+    </script>
+</head>
+<body>
+    <h1>My Webpage</h1>
+    <input type="text" id="name" />
+    <button onclick="callApi()">Call API</button>
+    <p id="response"></p>
+</body>
+   
+</html>
+

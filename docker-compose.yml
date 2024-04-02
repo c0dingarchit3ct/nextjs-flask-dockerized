@@ -1,0 +1,20 @@
+# docker-compose.yaml
+version: '3'
+
+services:
+  server:
+    build:
+      context: ./python-server
+      dockerfile: Dockerfile.flask
+    ports:
+      - '5001:5001'
+    volumes:
+      - './python-server:/src'
+  frontend:
+    build:
+      context: ./front-end
+      dockerfile: Dockerfile.nextjs
+    ports:
+      - '3000:3000'
+    volumes:
+      - './front-end:/app'

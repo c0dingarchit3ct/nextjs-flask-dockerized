@@ -1,0 +1,7 @@
+FROM node:21
+
+WORKDIR /app
+
+# RUN chmod 750 ./startnextjs.sh 
+
+CMD ["./startnextjs.sh"]
